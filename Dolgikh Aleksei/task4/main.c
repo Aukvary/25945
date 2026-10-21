@@ -51,9 +51,12 @@ int main(void) {
     }
 
     printf("\n--- List contents ---\n");
-    for (Node* n = head; n != NULL; n = n->next) {
-        printf("%s\n", n->line);
-    }
+    // for (Node* n = head; n != NULL; n = n->next) {
+    //     printf("%s\n", n->line);
+    // }
+    //
+    printf("%s\n", head->line);
+    printf("%s\n", tail->line);
 
     Node* n = head;
     while (n != NULL) {

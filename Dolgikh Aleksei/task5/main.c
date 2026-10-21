@@ -28,11 +28,14 @@ int main(int argc, char* argv[]) {
 
     while (read(fd, &c, 1) == 1) {
         if (c == '\n') {
-            offsets[nlines] = line_start;
-            lengths[nlines] = pos - line_start;
-            nlines++;
+            if (pos > line_start) {
+                offsets[nlines] = line_start;
+                lengths[nlines] = pos - line_start;
+                nlines++;
+            }
             line_start = pos + 1;
         }
+
         pos++;
     }
 
